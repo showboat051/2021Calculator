@@ -10,27 +10,28 @@
     
     <div id="unit">
         <div id="display">
-            
+            <input type="text" name="numDisplay" value="0" id="numDisplay" placeholder="0" disabled="true">
         </div>
         
-        <table id="buttons">
+        <table id="number-keys">
             <tbody>
                 <tr id="row1">
-                    <button id="num1">1</button>
-                    <button id="num2">2</button>
-                    <button id="num3">3</button>
+                    <button class="numbers" onclick="calc(1)">1</button>
+                    <button class="numbers" onclick="calc(2)">2</button>
+                    <button class="numbers" onclick="calc(3)">3</button>
+                    <button class="operator" data-action="add">+</button>
                 </tr>
                 <br>
                 <tr id="row2">
-                    <button id="num4">4</button>
-                    <button id="num5">5</button>
-                    <button id="num6">6</button>
+                    <button class="numbers" onclick="calc(4)">4</button>
+                    <button class="numbers" onclick="calc(5)">5</button>
+                    <button class="numbers" onclick="calc(6)">6</button>
                 </tr>
                 <br>
                 <tr id="row3">
-                    <button id="num7">7</button>
-                    <button id="num8">8</button>
-                    <button id="num9">9</button>
+                    <button class="numbers" onclick="calc(7)">7</button>
+                    <button class="numbers" onclick="calc(8)">8</button>
+                    <button class="numbers" onclick="calc(9)">9</button>
                 </tr>
             </tbody>
             
