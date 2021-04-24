@@ -10,7 +10,7 @@
     
     <div id="unit">
         <div id="display">
-            <input type="text" name="numDisplay"  id="numDisplay"  disabled />
+            <input type="text" name="numDisplay"  id="numDisplay"  />
         </div>
         
         <table id="number-keys">
@@ -38,6 +38,9 @@
                     <tr id="row4">
                         <button class="numbers" value="0">0</button>
                         <button class="operator" value="/">/</button>
+                        <button onclick="erase()" class="action" value="C">C</button>
+                        <button onclick="calculate()" class="action" value="=">=</button>
+
                     </tr>
 
                 </tr>
