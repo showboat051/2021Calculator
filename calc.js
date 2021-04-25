@@ -1,5 +1,4 @@
 //**********************UNIT RESOURCES************************************** */
-// const calculatorButtons = document.getElementById("unit");
 const numButtons = document.querySelectorAll('.numbers');
 const opButtons = document.querySelectorAll('.operator');
 const actionButtons = document.querySelectorAll('.action');
@@ -8,6 +7,8 @@ const eraseButton = document.getElementById("eraseButton");
 //**********************GLOBAL VARIABLES************************************** */
 let num1;
 let num2;
+let currentNumber = 0;
+let result;
 let numToCalc = [] ;
 let operator = null;
 
@@ -29,6 +30,9 @@ let operator = null;
 for (var i = 0; i < numButtons.length; i++) {
     numButtons[i].addEventListener("click" , function(e) {
         console.log("you clicked " + e.target.value);
+        num1 = valueDisplay.innerHTML += e.target.value;
+        num2 = valueDisplay.innerHTML += e.target.value;
+
     })
 };
 
@@ -43,6 +47,10 @@ for (var i = 0; i < opButtons.length; i++) {
 for (var i = 0; i < actionButtons.length; i++) {
     actionButtons[i].addEventListener("click" , function(e) {
         console.log("you clicked " + e.target.value);
+        //Clear Button
+        if(e.target.value = "C") {
+            valueDisplay.innerHTML = "";
+        }
     })
 };
 
@@ -56,7 +64,7 @@ for (var i = 0; i < actionButtons.length; i++) {
 
 
 function calculate() {
-    let result = num1 + num2;
+     result = num1 + num2;
     valueDisplay.innerHTML = result;
 }
 
@@ -64,3 +72,4 @@ function erase() {
     console.log("clicked erase");
     valueDisplay.innerHTML = "";
 }
+
