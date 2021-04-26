@@ -4,13 +4,12 @@ const opButtons = document.querySelectorAll('.operator');
 const actionButtons = document.querySelectorAll('.action');
 const valueDisplay = document.getElementById("display");
 const eraseButton = document.getElementById("eraseButton");
+
 //**********************GLOBAL VARIABLES************************************** */
-let num1;
-let num2;
-let currentNumber = 0;
+let prevNum = 0;
 let result;
 let numToCalc = [] ;
-let operator = null;
+let operator = ["+", "-", "*", "/"];
 
 
 //**********************BUTTON CLICKS ON THE CALCULATOR************************************** */
@@ -30,9 +29,8 @@ let operator = null;
 for (var i = 0; i < numButtons.length; i++) {
     numButtons[i].addEventListener("click" , function(e) {
         console.log("you clicked " + e.target.value);
-        num1 = valueDisplay.innerHTML += e.target.value;
-        num2 = valueDisplay.innerHTML += e.target.value;
-
+       valueDisplay.innerText += e.target.value;
+       
     })
 };
 
@@ -64,7 +62,20 @@ for (var i = 0; i < actionButtons.length; i++) {
 
 
 function calculate() {
-     result = num1 + num2;
+   switch(this.operator) {
+       case "+":
+           result = prevNum + currentNumber;
+           break;
+        case "-":
+           result = prevNum - currentNumber;
+           break;
+        case "*":
+            result = prevNum * currentNumber;
+            break;
+        case "/":
+            result = prevNum / currentNumber;
+            break;    
+   }
     valueDisplay.innerHTML = result;
 }
 
