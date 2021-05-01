@@ -28,23 +28,46 @@ let operator = ["+", "-", "*", "/"];
 for (var i = 0; i < Buttons.length; i++) {
     Buttons[i].addEventListener("click" , function(e) {
         console.log("you clicked " + e.target.value);
-    //    valueDisplay.innerText += e.target.value;
-    var input = e.target.innerText;
-    var num = parseInt(input);
-
+     valueDisplay.innerText += e.target.value;
+    
+    
         //Clear Button
         if(e.target.value === "C") {
             console.log("cleared");
             operator = null;
             currentNumber = 0
-            valueDisplay.innerText = 0;
-        } else {
-            
-        }
-    })
-};
+            valueDisplay.innerText = "";
+        } 
+        
+    }) 
 
+   
 
+}; // end of button clicks and logic behavior
+
+function solve () {
+    let input = valueDisplay.innerText;
+    let result = eval(input);
+    valueDisplay.innerText = result;
+} // end of solve()
+
+function calculate(num) {
+    switch(operator) {
+        case "+":
+            result = prevNum + currentNumber;
+            break;
+         case "-":
+            result = prevNum - currentNumber;
+            break;
+         case "*":
+             result = prevNum * currentNumber;
+             break;
+         case "/":
+             result = prevNum / currentNumber;
+             break;    
+    }
+     valueDisplay.innerHTML = result;
+ }// end of calculate()
 
 
 
@@ -55,23 +78,6 @@ for (var i = 0; i < Buttons.length; i++) {
 //**********************FUNCTIONS************************************** */
 
 
-function calculate() {
-   switch(this.operator) {
-       case "+":
-           result = prevNum + currentNumber;
-           break;
-        case "-":
-           result = prevNum - currentNumber;
-           break;
-        case "*":
-            result = prevNum * currentNumber;
-            break;
-        case "/":
-            result = prevNum / currentNumber;
-            break;    
-   }
-    valueDisplay.innerHTML = result;
-}
 
 function erase() {
     console.log("clicked erase");
