@@ -1,7 +1,32 @@
 .calcButtons {
-    color:blue;
+   background-color:rgb(23, 241, 169);
+   width: 40px;
 }
 
-#unit {
-    background-color:red;
+calcButtons:hover {
+    background-color:white;
+ }
+
+#unit{
+   margin:auto;
+   margin-top: 100px;
+   width: 300px;
 }
+
+.calcButtons {
+   width: 75px;
+   height: 75px;
+}
+
+#numberKeys {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* #numberKeys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
