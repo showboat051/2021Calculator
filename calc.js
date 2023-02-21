@@ -23,7 +23,7 @@ for (var i = 0; i < Buttons.length; i++) {
             console.log("cleared");
             operator = null;
             currentNumber = 0
-            valueDisplay.innerText = "";
+            valueDisplay.innerText = 0 ;
         } 
         
     }) 
